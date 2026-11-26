@@ -1,5 +1,10 @@
 import Button from "@/components/ui/Button";
+import Checkbox from "@/components/ui/Checkbox";
 import IconButton from "@/components/ui/IconButton";
+import Input from "@/components/ui/Input";
+import Select from "@/components/ui/Select";
+import Slider from "@/components/ui/Slider";
+import Textarea from "@/components/ui/Textarea";
 
 const addIcon = (
     <svg
@@ -84,6 +89,63 @@ export default function Home() {
                     {addIcon}
                 </IconButton>
             </div>
+            <section
+                aria-label="Form controls"
+                className="grid w-full max-w-2xl min-w-0 gap-6 sm:grid-cols-2"
+            >
+                <Input
+                    id="name"
+                    name="name"
+                    placeholder="Type your name"
+                    label="Name"
+                />
+                <Input
+                    name="email"
+                    type="email"
+                    placeholder="Type your email"
+                    label="Email"
+                />
+                <Textarea
+                    name="description"
+                    label="Description"
+                    placeholder="Add comparison details"
+                    rows={4}
+                />
+                <Select
+                    name="workspace"
+                    label="Workspace"
+                    defaultValue="personal"
+                    options={[
+                        { id: "personal", name: "Personal" },
+                        { id: "work", name: "Work" },
+                    ]}
+                />
+                <Checkbox
+                    name="includeArchived"
+                    label="Include archived comparisons"
+                    defaultChecked
+                />
+                <Slider
+                    name="weight"
+                    label="Criterion weight"
+                    min={0}
+                    max={100}
+                    step={5}
+                    defaultValue={50}
+                />
+                <Input
+                    name="invalidName"
+                    label="Comparison name"
+                    error="Enter a comparison name."
+                    required
+                />
+                <Input
+                    name="disabledField"
+                    label="Disabled field"
+                    defaultValue="Read-only example"
+                    disabled
+                />
+            </section>
         </main>
     );
 }
