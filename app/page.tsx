@@ -1,4 +1,6 @@
+import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
+import Card from "@/components/ui/Card";
 import Checkbox from "@/components/ui/Checkbox";
 import IconButton from "@/components/ui/IconButton";
 import Input from "@/components/ui/Input";
@@ -145,6 +147,20 @@ export default function Home() {
                     defaultValue="Read-only example"
                     disabled
                 />
+            </section>
+
+            <section
+                aria-label="Form controls"
+                className="grid w-full max-w-2xl min-w-0 gap-6 sm:grid-cols-2"
+            >
+                <Card variant="bg-main" title="lorem">
+                    Hello from test 1
+                    <Badge text="warning" variant="warning" />
+                </Card>
+                <Card variant="bg-soft" title="lorem">
+                    Hello from test 2
+                    <Badge text="success" variant="success" />
+                </Card>
             </section>
         </main>
     );
